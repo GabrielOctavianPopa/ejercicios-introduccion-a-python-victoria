@@ -316,3 +316,39 @@
 #     print("Es palindromo")
 # else:
 #     print("No es palindromo")
+
+'''
+6. EJERCICIOS DICCIONARIOS
+'''
+
+#  Escribir un programa que implemente un directorio. En el directorio se podrán guardar para cada dni información relativa a la persona como nombre, dirección y teléfono. El programa nos dará el siguiente menú:
+# ·Añadir/modificar: Nos pide un dni. Si el dni se encuentra en el directorio, debe mostrar los datos y, opcionalmente, permitir modificarlos si no es correcto. Si el dni no se encuentra, debe permitir ingresar los datos correspondientes.
+# ·Buscar: Nos pide un dni, y nos muestras el contacto. Opcionalmente podemos implementar la búsqueda por nombre.
+# ·Borrar: Nos pide un dni y si existe nos preguntará si queremos borrarlo del directorio.
+# ·Listar: Nos muestra todos los contactos del directorio.
+#  Implementar el programa con un diccionario.
+
+'''
+ 7. EJERCICIOS FUNCIONES
+'''
+
+# 1.Función que recibe una lista de enteros y devuelve la suma de todos sus elementos. Sin utilizar sum().
+# 2.Función que recibe una lista de enteros y devuelve otra lista con aquellos que son pares y ≥ 113.
+# 3.Función que recibe una lista de enteros y calcula su media aritmética sin utilizar el módulo maths.
+# 4.Función que calcula el factorial de un número. Versión recursiva.
+# 5.Función que recibe un número y devuelve una lista con todos sus divisores.
+# 6. Crear una función que calcule el MCD de dos números por el método de Euclides. El método de Euclides es el siguiente:
+#
+# ·Se divide el número mayor entre el menor. ·Si la división no es exacta, dividimos el divisor entre el resto obtenido y se continúa de esta forma hasta obtener una división exacta, siendo el último divisor el MCD.
+# Crea un programa principal que lea dos números enteros y muestre el MCD.
+
+# EJERCICIOS LISTAS POR COMPRESIÓN
+
+x = [7, 3, 5, -6, 4, -2, 9]
+#  personas = [“Carlota", “Enrique", “Ana"]
+# 1.El cubo de cada elemento de la lista x.
+# 2.El cuadrado de los elementos impares de x.
+# 3.El cuadrado de los elementos pares y positivos de x.
+# 4.Los elementos de personas con más de 5 caracteres.
+# 5.Los elementos de personas que contienen la vocal “o”.
+# 6.Los elementos de personas que contienen la vocal “e” y además tienen una longitud de al menos 6 caracteres.
