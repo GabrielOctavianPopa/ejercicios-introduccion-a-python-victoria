@@ -210,35 +210,109 @@
 # ordenacion de listas
 
 # x = [9, 2, 3, 10, 7, 3, 10, 3, 9]
-#
-# # 1.El mayor número de la lista
-# print('El mayor número de la lista: ', max(x))
-#
-# # 2.El menor número de la lista
-# print('El menor número de la lista: ', min(x))
-#
-# # 3.Los tres mayores números de la lista
-# print('Los tres mayores números de la lista: ', end='')
-# x.sort()
-# for i in range(3):
-#     print(x[len(x) - 1 - i], end=' ')
-#
-# # 4.El mayor de los 3 primeros números de la lista
-# print('')
-# print('El mayor de los 3 primeros números de la lista: ', end='')
-# x.sort()
-# print(x[2])
-#
-# # 5.El menor de los 4 últimos números de la lista
-# print('El menor de los 4 últimos números de la lista: ', end='')
-# x.sort()
-# print(x[4])
-#
-# # 6.La suma de los 5 mayores números de la lista
-# print('La suma de los 5 mayores números de la lista: ', end='')
-#
-# # 7.La suma de los 3 menores números de la lista
-# print('La suma de los 3 menores números de la lista: ', end='')
-# x.sort()
-# print(x[0] + x[1] + x[2])
+# # numero maximo
+# print(max(x))
+# # numero minimo
+# print(min(x))
+# # los tres mas grandes
+# print(sorted(x)[-3:])
+# # los tres mas pequeños
+# print(sorted(x)[:3])
+# # el mayor de los tres primeros
+# print(max(x[:3]))
+# # el menor de los cuatro ultimos
+# print(min(x[-4:]))
+# # la suma de los 5 mayores numeros de la lista
+# print(sum(sorted(x)[-5:]))
+# # la suma de los 3 menores numeros de la lista
+# print(sum(sorted(x)[:3]))
 
+# listas finales
+
+# # 1 Realiza un programa que lea por teclado las 5 notas obtenidas por un alumno (comprendidas entre 0 y 10.)
+# # a continuacion debe mostrar todas las notas, la nota media, la nota mas alta que ha sacado y la menor
+#
+# print("Introduce las 5 notas: ")
+# notas = []
+# contadorAux = 0;
+# while (contadorAux < 5):
+#     nota = float(input())
+#     if (nota >= 0 and nota <= 10):
+#         notas.append(nota)
+#         contadorAux += 1
+#     else:
+#         print("Nota no valida")
+#
+# print("Notas: ", notas)
+#
+# print("Nota media: ", sum(notas) / len(notas))
+#
+# print("Nota mas alta: ", max(notas))
+# print("Nota mas baja: ", min(notas))
+
+# # 2 Lee una cadena de texto del usuario y para cada letra indica si es una vocal o una consonante.
+#
+# cadena = input()
+#
+# for i in cadena:
+#     match i.lower():
+#         case 'a' | 'e' | 'i' | 'o' | 'u' | 'á' | 'é' | 'í' | 'ó' | 'ú':
+#             print("Vocal")
+#         case _:
+#             print("Consonante")
+
+# cadena = input()
+# if cadena.isalpha():
+#     for letra in cadena:
+#         if letra.lower() in 'aeiouáéíóú':
+#             print(letra, "vocal")
+#         else:
+#             print(letra, "consonante")
+
+# # 3 A partir de 2 listas de enteros, 'numeros1' y 'numeros2', crea una lista que contiene aquellos valores
+# # intersección de ambas listas.
+# # de la primera que también están en la segunda e imprímela por pantalla. Es decir, calcula la
+#
+# numer01 = [1, 5, 6, 3, 12, 8, 9, 10, 11, 15, 26, 15, 34, 9, 20]
+# numer02 = [1, 2, 3, 10, 11, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+#
+# print(list(set(numer01) & set(numer02)))
+
+# # 4 A partir de 2 listas de enteros, 'numeros1' y 'numeros2‘ de igual tamaño, generar otra cuyo primer
+# # elemento es el producto del primer elemento de las listas 'numeros1' y 'numeros2', y así
+# # sucesivamente.
+#
+# numer01 = [1, 5, 6, 3, 12, 8, 9, 10, 11, 15, 26, 15, 34, 9, 20]
+# numer02 = [1, 2, 3, 10, 11, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+# numer03 = []
+#
+# # multiplicar los elementos de las listas entre ellos y añadirlos a la lista numer03
+# for i in range(len(numer01)):
+#     numer03.append(numer01[i] * numer02[i])
+# print(numer03)
+
+# # 5 A partir de 2 listas de enteros, 'numeros1' y 'numeros2', almacenar en una lista el resultado de
+# # multiplicar cada uno de los elementos de 'numeros1' por, a su vez, cada uno de los elementos de
+# # 'numeros2'. Es decir, la lista resultante tendrá len(numeros1) * len(numeros2) elementos.
+#
+# numer01 = [1, 5, 6, 3, 12, 8, 9, 10, 11, 15, 26, 15, 34, 9, 20]
+# numer02 = [1, 2, 3, 10, 11, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+# numer03 = []
+#
+# # multiplicar los elementos de las listas entre ellos y añadirlos a la lista numer03
+# for i in numer01:
+#     for j in numer02:
+#         numer03.append(i * j)
+# print(numer03)
+
+# # 6 Lee una cadena de texto del usuario e imprime por pantalla un mensaje si y solo si la cadena es un
+# # palíndromo (se lee igual de izquierda a derecha que de derecha a izquierda). Ejemplo: Yo dono rosas,
+# # oro no doy.
+#
+# cadena = input()
+# cadena = cadena.replace(" ", "").lower().strip()
+#
+# if cadena == cadena[::-1]:
+#     print("Es palindromo")
+# else:
+#     print("No es palindromo")
