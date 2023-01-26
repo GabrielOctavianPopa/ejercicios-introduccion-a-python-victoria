@@ -321,34 +321,138 @@
 6. EJERCICIOS DICCIONARIOS
 '''
 
-#  Escribir un programa que implemente un directorio. En el directorio se podrán guardar para cada dni información relativa a la persona como nombre, dirección y teléfono. El programa nos dará el siguiente menú:
-# ·Añadir/modificar: Nos pide un dni. Si el dni se encuentra en el directorio, debe mostrar los datos y, opcionalmente, permitir modificarlos si no es correcto. Si el dni no se encuentra, debe permitir ingresar los datos correspondientes.
-# ·Buscar: Nos pide un dni, y nos muestras el contacto. Opcionalmente podemos implementar la búsqueda por nombre.
-# ·Borrar: Nos pide un dni y si existe nos preguntará si queremos borrarlo del directorio.
-# ·Listar: Nos muestra todos los contactos del directorio.
-#  Implementar el programa con un diccionario.
+# #  Escribir un programa que implemente un directorio. En el directorio se podrán guardar para cada dni información relativa a la persona como nombre, dirección y teléfono. El programa nos dará el siguiente menú:
+# # ·Añadir/modificar: Nos pide un dni. Si el dni se encuentra en el directorio, debe mostrar los datos y, opcionalmente, permitir modificarlos si no es correcto. Si el dni no se encuentra, debe permitir ingresar los datos correspondientes.
+# # ·Buscar: Nos pide un dni, y nos muestras el contacto. Opcionalmente podemos implementar la búsqueda por nombre.
+# # ·Borrar: Nos pide un dni y si existe nos preguntará si queremos borrarlo del directorio.
+# # ·Listar: Nos muestra todos los contactos del directorio.
+# #  Implementar el programa con un diccionario.
+#
+# diccionario = {}
+# print('Bienvenido al directorio \n', '1. Añadir/modificar \n', '2. Buscar \n', '3. Borrar \n', '4. Listar \n', '5. Salir')
+#
+# bandera = True
+# while bandera:
+#     opcion = int(input('¿Que desea hacer?: '))
+#     if (opcion == 1): #añadir/modificar
+#         dni = input('Ingrese el dni: ')
+#         if dni in diccionario:
+#             print('El dni ya existe')
+#             print(diccionario[dni])
+#             respuesta = input('¿Desea modificarlo? S/N\n')
+#             if respuesta.upper() == 'S':
+#                 diccionario[dni] = [input('Ingrese el nombre: '), input('Ingrese el apellido: ')]
+#             elif respuesta.upper == 'N':
+#                 print('De acuerdo')
+#         else:
+#             nombre = input('Ingrese el nombre: ')
+#             apellido = input('Ingrese el apellido: ')
+#             diccionario[dni] = [nombre, apellido]
+#
+#     elif (opcion == 2): #bucar
+#         dni = input('Introduzca el dni: ')
+#         if dni in diccionario:
+#             print(diccionario[dni])
+#         else:
+#             print('El dni no existe')
+#
+#     elif (opcion == 3):
+#         dni = input('Introduzca el dni: ')
+#         if dni in diccionario:
+#             respuesta = input('¿Desea borrarlo? S/N\n')
+#             if respuesta.upper() == 'S':
+#                 del diccionario[dni]
+#             elif respuesta.upper == 'N':
+#                 print('De acuerdo')
+#
+#     elif (opcion == 4):
+#         print(diccionario)
+#
+#     elif (opcion == 5):
+#         print('Gracias por usar el directorio')
+#         bandera = False
+#     else:
+#         print('Opcion no valida')
+
+
 
 '''
  7. EJERCICIOS FUNCIONES
 '''
 
-# 1.Función que recibe una lista de enteros y devuelve la suma de todos sus elementos. Sin utilizar sum().
-# 2.Función que recibe una lista de enteros y devuelve otra lista con aquellos que son pares y ≥ 113.
-# 3.Función que recibe una lista de enteros y calcula su media aritmética sin utilizar el módulo maths.
-# 4.Función que calcula el factorial de un número. Versión recursiva.
-# 5.Función que recibe un número y devuelve una lista con todos sus divisores.
-# 6. Crear una función que calcule el MCD de dos números por el método de Euclides. El método de Euclides es el siguiente:
+# # 1.Función que recibe una lista de enteros y devuelve la suma de todos sus elementos. Sin utilizar sum().
+# def ejerc1(lista):
+#     suma = 0
+#     for i in lista:
+#         suma += i
+#     return suma
 #
-# ·Se divide el número mayor entre el menor. ·Si la división no es exacta, dividimos el divisor entre el resto obtenido y se continúa de esta forma hasta obtener una división exacta, siendo el último divisor el MCD.
-# Crea un programa principal que lea dos números enteros y muestre el MCD.
+# print(ejerc1([1, 2, 3, 4, 5]))
+
+# # 2.Función que recibe una lista de enteros y devuelve otra lista con aquellos que son pares y ≥ 113.
+# def ejerc2(lista):
+#     lista2 = []
+#     for i in lista:
+#         if i >= 113 and i % 2 == 0:
+#             lista2.append(i)
+#     return lista2
+#
+# print(ejerc2([1, 2, 3, 4, 5, 113, 118, 119, 120, 123, 150, 200, 201]))
+
+# # 3.Función que recibe una lista de enteros y calcula su media aritmética sin utilizar el módulo maths.
+# def ejerc3(lista):
+#     suma = 0
+#     for i in lista:
+#         suma += i
+#     return suma / len(lista)
+#
+# print(ejerc3([1, 2, 3, 4, 5, 113, 118, 119, 120, 123, 150, 200, 201]))
+
+# # 4.Función que calcula el factorial de un número. ¿Versión recursiva?.
+# def ejerc4(numero):
+#     if numero == 0:
+#         return 1
+#     else:
+#         return numero * ejerc4(numero - 1)
+#
+# print(ejerc4(5))
+
+# # 5.Función que recibe un número y devuelve una lista con todos sus divisores.
+# def ejerc5(numero):
+#     lista = []
+#     for i in range(1, numero + 1):
+#         if numero % i == 0:
+#             lista.append(i)
+#     return lista
+#
+# print(ejerc5(10))
+
+# # 6. Crear una función que calcule el MCD de dos números por el método de Euclides. El método de Euclides es el siguiente:
+# # 1 Se divide el mayor número entre el menor.
+# # 2 Si el resto es 0, el MCD es el menor.
+# # 3 Si el resto no es 0, se divide el menor entre el resto y se repite el proceso.
+# def ejerc6(dividendo, divisor):
+#     while divisor != 0:
+#         resto = dividendo % divisor
+#         dividendo = divisor
+#         divisor = resto
+#     return dividendo
+#
+# print(ejerc6(100, 44))
 
 # EJERCICIOS LISTAS POR COMPRESIÓN
 
 x = [7, 3, 5, -6, 4, -2, 9]
-#  personas = [“Carlota", “Enrique", “Ana"]
+personas = ["Carlota", "Enrique", "Ana"]
 # 1.El cubo de cada elemento de la lista x.
+print([i ** 3 for i in x])
 # 2.El cuadrado de los elementos impares de x.
+print([i ** 2 for i in x if i % 2 != 0])
 # 3.El cuadrado de los elementos pares y positivos de x.
+print([i ** 2 for i in x if i % 2 == 0 and i > 0])
 # 4.Los elementos de personas con más de 5 caracteres.
+print([i for i in personas if len(i) > 5])
 # 5.Los elementos de personas que contienen la vocal “o”.
+print([i for i in personas if 'o' in i])
 # 6.Los elementos de personas que contienen la vocal “e” y además tienen una longitud de al menos 6 caracteres.
+print([i for i in personas if 'e' in i and len(i) >= 6])
